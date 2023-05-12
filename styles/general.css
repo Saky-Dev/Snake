@@ -17,4 +17,8 @@ body {
 }
 h1, h2, span, button, input, p, li, a {
   font-family: 'VT323', monospace;
+  color: var(--clr-main);
+}
+img {
+  filter: invert(0%) sepia(85%) saturate(955%) hue-rotate(131deg) brightness(81%) contrast(84%);
 }
