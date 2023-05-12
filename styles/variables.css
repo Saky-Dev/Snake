@@ -1,15 +1,8 @@
 :root {
   /* --- Colors --- */
-  --clr-main: #CC2936;
-
-  --clr-ligh-background: #D9DBF1;
-  --clr-light-contrast: #08415C;
-
-  --clr-dark-background: #4F517D;
-  --clr-dark-contrast: #FCDDF2;
-
-  --clr-green: #06D6A0;
-  --clr-red: #DA2C38;
+  --clr-main: #141414;
+  --clr-background: #1BD46E;
+  --clr-contrast: #C8C6D7;
 
   /* --- Font zize --- */
   --fns-title: 2.4em;
