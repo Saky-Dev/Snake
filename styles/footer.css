@@ -1,0 +1,116 @@
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vw 15px 2vw;
+}
+footer span,
+footer button {
+  font-size: var(--fns-small-text);
+}
+footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+footer ul li a,
+footer ul li a div {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  position: relative;
+}
+footer ul li a:is(:focus, :hover) {
+  outline: 4px solid var(--clr-main);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+footer ul li a::before,
+footer ul li a::after {
+  position: absolute;
+  left: -1px;
+  width: calc(100% - 4px);
+  height: 3px;
+  background: transparent;
+  border-width: 0 3px;
+  content: '';
+  border-style: solid;
+  border-color: var(--clr-main);
+  opacity: 0;
+}
+footer ul li a::before {
+  top: -1px;
+}
+footer ul li a::after {
+  bottom: -1px;
+}
+footer ul li a:is(:focus, :hover)::after,
+footer ul li a:is(:focus, :hover)::before,
+footer ul li a:is(:hover, :focus) div::before,
+footer ul li a:is(:hover, :focus) div::after {
+  opacity: 1;
+}
+
+footer ul li a div::before,
+footer ul li a div::after {
+  position: absolute;
+  left: -5px;
+  width: calc(100% + 4px);
+  height: 3px;
+  background: var(--clr-main);
+  border-width: 0 3px;
+  content: '';
+  border-style: solid;
+  border-color: var(--clr-background);
+  z-index: 2;
+  opacity: 0;
+}
+footer ul li a div::before {
+  top: -5px;
+}
+footer ul li a div::after {
+  bottom: -5px;
+}
+
+footer ul li a div img {
+  width: 35px;
+  height: 35px;
+}
+footer > a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+footer > a:is(:hover, :focus) {
+  outline: none;
+}
+footer > a::before,
+footer > a::after {
+  position: absolute;
+  top: 110%;
+  content: '';
+  background: var(--clr-main);
+  transform: scaleY(0);
+}
+footer > a::before {
+  left: 0;
+  width: 100%;
+  height: 2px;
+  margin: 2px 0;
+}
+footer > a::after {
+  left: 2px;
+  width: calc(100% - 4px);
+  height: 6px;
+}
+footer > a:is(:hover, :focus)::before,
+footer > a:is(:hover, :focus)::after {
+  transform: scaleY(1);
+  outline: none;
+}

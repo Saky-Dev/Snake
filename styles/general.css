@@ -15,7 +15,7 @@ body {
   gap: 3vh;
   background: var(--clr-background);
 }
-h1, h2, span, button, input, p, li, a {
+h1, h2, span, button, input, p, li, a, span {
   font-family: 'VT323', monospace;
   color: var(--clr-main);
 }
