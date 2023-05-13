@@ -1,3 +1,20 @@
+const itCrash = () => {
+  const x = snake[0].x
+  const y = snake[0].y
+
+  let positions = Object.values(snake)
+
+  positions.shift()
+
+  if (x > 19 || x < 0 || y > 19 || y < 0)
+    return true
+
+  if (positions.find(part => part.x === x && part.y === y))
+    return true
+
+  return false
+}
+
 const addBody = () => {
   const keys = Object.keys(snake)
   const box_snake_body = document.createElement('div')
@@ -66,7 +83,7 @@ const initGame = () => {
 
     move[direction]()
 
-    if (snake[0].x > 19 || snake[0].x < 0 || snake[0].y > 19 || snake[0].y < 0) {
+    if (itCrash()) {
       clearInterval(move_timer)
       box_mask.classList.toggle('hidden')
 
@@ -85,6 +102,13 @@ const initGame = () => {
       snake_part.style.gridRow = `${value.y + 1}`
       snake_part.style.transform = `rotate(${rotate[value.direction]}deg)`
     })
+
+    if (Object.keys(snake).length === 20 * 20) {
+      clearInterval(move_timer)
+      box_mask.classList.toggle('hidden')
+
+      return alert('you are a winner!')
+    }
 
     if (itGrow)
       moveApple()
